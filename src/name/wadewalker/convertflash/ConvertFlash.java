@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 
 //==============================================================================
 /**
- * Uses ffmpeg to convert flash videos to WMV vidio.
+ * Uses ffmpeg to convert flash videos to WMV video.
  *
  * Copyright (c) 2011 Wade Walker. All rights reserved.
  * @author Wade Walker
@@ -24,11 +24,13 @@ public class ConvertFlash {
     private static final int siMSBetweenProcessChecks = 1000;
 
     /** Directory to get Flash vids from. */
-    private String sInputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
+//    private String sInputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
+    private String sInputDir = "D:\\Users\\Wade\\My Pictures\\2012-06-23 through 08-13 Chess";
 
     /** Directory to put WMV files. */
 //    private String sOutputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\Converted";
-    private String sOutputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
+//    private String sOutputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
+    private String sOutputDir = "D:\\Users\\Wade\\My Pictures\\2012-06-23 through 08-13 Chess";
 
     /** ffmpeg binary path. */
     private String sConverterPath = "D:\\Users\\Wade\\Videos\\Music Videos\\ffmpeg-git-81ef892-win64-static\\bin\\ffmpeg.exe";
@@ -202,7 +204,8 @@ public class ConvertFlash {
             listCmdAndArgs.add( "\"" + sInputDir + "\\" + sInputFile + "\"" );
             listCmdAndArgs.add( "-b" );
             listCmdAndArgs.add( "1200k" );
-            listCmdAndArgs.add( "\"" + sOutputDir + "\\" + sArtist + " - " + sTitle + ".wmv\"" );
+//            listCmdAndArgs.add( "\"" + sOutputDir + "\\" + sArtist + " - " + sTitle + ".wmv\"" );
+            listCmdAndArgs.add( "\"" + sOutputDir + "\\" + sArtist + " - " + sTitle + ".mp4\"" );
 
             listUnstartedProcesses.add( listCmdAndArgs );
         }
