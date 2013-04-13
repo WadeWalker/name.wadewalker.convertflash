@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 /**
  * Uses ffmpeg to convert flash videos to WMV video.
  *
- * Copyright (c) 2011 Wade Walker. All rights reserved.
+ * Copyright (c) 2011-2013 Wade Walker. All rights reserved.
  * @author Wade Walker
  */
 public class ConvertFlash {
@@ -24,13 +24,13 @@ public class ConvertFlash {
     private static final int siMSBetweenProcessChecks = 1000;
 
     /** Directory to get Flash vids from. */
-//    private String sInputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
-    private String sInputDir = "D:\\Users\\Wade\\My Pictures\\2012-06-23 through 08-13 Chess";
+    private String sInputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
+//    private String sInputDir = "D:\\Users\\Wade\\My Pictures\\2012-06-23 through 08-13 Chess";
 
     /** Directory to put WMV files. */
-//    private String sOutputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\Converted";
+    private String sOutputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\Converted";
 //    private String sOutputDir = "D:\\Users\\Wade\\Videos\\Music Videos\\New";
-    private String sOutputDir = "D:\\Users\\Wade\\My Pictures\\2012-06-23 through 08-13 Chess";
+//    private String sOutputDir = "D:\\Users\\Wade\\My Pictures\\2012-06-23 through 08-13 Chess";
 
     /** ffmpeg binary path. */
     private String sConverterPath = "D:\\Users\\Wade\\Videos\\Music Videos\\ffmpeg-git-81ef892-win64-static\\bin\\ffmpeg.exe";
@@ -182,7 +182,8 @@ public class ConvertFlash {
         System.arraycopy( asFlashFiles, 0, asInputFiles, 0, asFlashFiles.length );
         System.arraycopy( asMP4Files, 0, asInputFiles, asFlashFiles.length, asMP4Files.length );
 
-        Pattern patternFileName = Pattern.compile( "(.+?)\\s+-\\s+(.+)\\.(?:flv|mp4)" );
+//        Pattern patternFileName = Pattern.compile( "(.+?)\\s+-\\s+(.+)\\.(?:flv|mp4)" );
+        Pattern patternFileName = Pattern.compile( "(.+?)\\s+-\\s+(.+)\\.(?:flv)" );
 
         // create a process command line for each file
         List<List<String>> listUnstartedProcesses = new ArrayList<List<String>>();
